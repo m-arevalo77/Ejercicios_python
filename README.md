@@ -16,6 +16,8 @@ print(f"Población total: {len(edad_habitantes)}")
 print(f"Porcentaje de menores de edad: {menores/len(edad_habitantes)*100}. Porcentaje de mayores de edad: {mayores/len(edad_habitantes)*100}")
 
 #Ejercicio municipalidad
+
+
 import random 
 municipality = [random.sample(range(1, 45001), 6) 
 for x in range(0, 124)] 
@@ -24,6 +26,8 @@ print("The winner was: " + str(results.index(max(results))))
 
 
 #Ejecicio partidos políticos
+
+
 import numpy as np
 partidos = ["socio-democratico","ultra-derechista","primero-los-ricos","centro demoniaco","cambio invertido","alianza queremos más pobres"]
 votos=np.random.randint(1,4500,(123,6)) 
@@ -31,6 +35,8 @@ print(f"El ganador es el partido
 {partidos[np.argmax(votos.sum(axis=0))]} con {max(votos.sum(axis=0))} votos"
 
 #Determinar ¿cuál es el número par?
+
+
 numero_1 = int(input("Escriba un número entero: ")) 
 numero_2 = int(input(f"Escriba un número entero mayor o igual que {numero_1}: ")) 
 for i in range(numero_1, numero_2 + 1): 
