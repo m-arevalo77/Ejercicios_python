@@ -1,0 +1,71 @@
+#Todos son ejercicios de clase trabajados en colap
+
+#Ejercicio 1 Edad de la población
+
+from random import randint 
+edad_habitantes = [randint(1, 100) for i in range(randint(1000, 75000))] 
+menores, mayores = len(list((filter(lambda edad: edad<18 , edad_habitantes)))), len(list(filter(lambda edad: edad>=18, edad_habitantes))) 
+print(f"Población total: {len(edad_habitantes)}") 
+print(f"Porcentaje de menores de edad: {menores/len(edad_habitantes)*100}. Porcentaje de mayores de edad: {mayores/len(edad_habitantes)*100}")
+
+#Ejercicio 2 municipalidad
+import random 
+municipality = [random.sample(range(1, 45001), 6) 
+for x in range(0, 124)] 
+results = [sum(col) for col in zip(*municipality)] 
+print("The winner was: " + str(results.index(max(results))))
+
+#Ejercicio 3 partidos políticos
+import numpy as np
+partidos = ["socio-democratico","ultra-derechista","primero-los-ricos","centro demoniaco","cambio invertido","alianza queremos más pobres"]
+votos=np.random.randint(1,4500,(123,6)) 
+print(f"El ganador es el partido 
+{partidos[np.argmax(votos.sum(axis=0))]} con {max(votos.sum(axis=0))} votos"
+
+#Ejerccio 4 carrera fórmula 1
+import numpy as np
+matriz = np.random.uniform(8.2,10,size=(4,5))
+tot_vueltas = np.array([[corredor+1,matriz[:,corredor].sum()] for corredor in range(len(matriz[0]))])
+ganador = np.where(matriz == matriz[:,1].min())
+print ("Resultados de la carrera:\n"+str(matriz)+"\nEl Piloto ganador fue el: "+str(tot_vueltas[ganador[0]])
+
+#visualice en gráficos de dispersión [pyplot (scatter)] o de barras tomando los valores obtenidos de los ejercicios:
+(candidatos a la alcaldía ayuntamiento)  - barras
+
+import numpy as np ; from random import randint; import matplotlib.pyplot as plt
+matriz = np.array([[i+1, randint(1,20000)] for i in range(5)]) 
+ganador= np.where(matriz == matriz[:,1].max())
+#Diagrama de Barras
+fig = plt.figure('Gráfica de barras') #Generacion de ventana
+ax = fig.add_subplot(1,1,1) #Un eje coordenado 
+nombres = ['Liberal','Conservador','A.Verde','P.Democrático','C.Radical']#Arreglo con los partidos
+ax.bar(range(len(matriz)),matriz[:,1])
+ax.set_xticks(range(len(matriz[:,1]))) 
+ax.set_xticklabels(nombres) 
+plt.ylabel("Total votos");plt.xlabel("Candidatos")
+plt.show()
+
+#(carrera de formular 1) – dispersión (colores por cada vehículo)
+import numpy as np
+matriz = np.random.uniform(8.2,10,size=(4,5))
+tot_vueltas = np.array([[corredor+1,matriz[:,corredor].sum()] for corredor in range(len(matriz[0]))])
+ganador = np.where(matriz == matriz[:,1].min())
+#print(" El tiempo total por cada corredor fue: " + "\n" + str(tot_vueltas) + "\n" + " El corredor ganador fue el numero: " + str(tot_vueltas[ganador[0]]))
+#Diagrama de dispersion
+x = tot_vueltas[:,1]
+y = tot_vueltas[:,0]
+fig = plt.figure()
+fig.add_subplot(111)
+plt.scatter(y, x, c=x)
+plt.show()
+
+
+#Determinar cuál es un número par
+numero_1 = int(input("Escriba un número entero: ")) 
+numero_2 = int(input(f"Escriba un número entero mayor o igual que {numero_1}: ")) 
+for i in range(numero_1, numero_2 + 1): 
+ if i % 2 == 0:print(f"El número {i} es par.")
+
+
+
+
