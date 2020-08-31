@@ -1,0 +1,19 @@
+#Los siguientes son una serie de ejercicicios practicados en google colap
+#Ejercicio para determinar el máximo, mínimo y promedio
+
+from numpy import mean num_list = [24,64,15,74] 
+avg=mean(num_list) 
+print("El promedio es", round (avg,2) , "El mayor es: " + str(max(num_list)), "El menor es: " + str(min(num_list)))
+
+#el mayor de tres números
+var1, var2,var3= input ("Ingrese los tres números separados  por coma:").split(",")
+print("El número máximo es: "+ str(max(var1,var2,var3)))
+
+#Ejercicios con selección de números 
+a,b =input("Ingrese dos valores: ").split(",")
+print("El primer número es {} y el segundo número es {}".format(a,b))
+print()
+
+
+
+
